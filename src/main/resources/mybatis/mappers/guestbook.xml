@@ -20,7 +20,7 @@
                    name, 
                    password, 
                    content, 
-                   to_char(reg_date, 'yyyy-mm-dd') reg_date
+                   to_char(reg_date, 'yyyy-mm-dd')
             from guestbook
 		]]>
 	</select>
