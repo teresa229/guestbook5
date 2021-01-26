@@ -9,8 +9,9 @@
 </head>
 <body>
 		<form action="${pageContext.request.contextPath}/guestbook/delete" method="get">
-			비밀번호 : <input type = "password" name="password">
-			<c:if test="${requestScope.result == 0}">
+			비밀번호 : <input type ="password" name="password">
+			<br>
+			<c:if test="${param.result eq 0}">   <!-- param.result -->
 				<p>비밀번호를 잘못 입력하셨습니다.</p>
 			</c:if>
 			<button type="submit">확인</button>

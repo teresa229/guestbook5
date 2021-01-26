@@ -67,15 +67,27 @@ public class GuestController{
 		int result = guestDao.guestDelete(guestVo);
 		
 		if(result == 1) {
-			//성공 redirect
-			return"redirect:/guestbook/list";
+			//성공 : redirect
+			return "redirect:/guestbook/list";
+		} else {
+			model.addAttribute("result", result);
+			//실패  : redirect - guestbook/deleteForm?no=88&result=0
+			return "redirect:/guestbook/deleteForm?no="+guestVo.getNo();
+		}
+		
+		/*
+		 tip 1! 실패  - 포워드는 redirect로 바꾸기, 파라미터 no가 있어야 한다. 기존 deleteForm의 형식을 체크한다.
+		 tip 2! result보다는 count같은 명확한 것이 좋을 것이다.
+ 		              현재  result값으로 deleteForm에서 문구를 보내고 있다. //<c:if test="${requestScope.result == 0}">
+		if(result == 1) {
+			//성공
+			return "redirect:/guestbook/list";
 		} else {
 			
 			model.addAttribute("result", result);
-			//실패 포워드 
+			//실패
 			return "deleteForm";
-		}
-		
+		} */
 	}
 		
 }
