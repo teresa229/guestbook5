@@ -14,7 +14,7 @@
 
 
 	<!-- 전체 리스트 가져오기 -->
-	<select id="selectList2" resultMap="cresultMapGuestVo">
+	<select id="selectList2" resultMap="resultMapGuestVo">
 		<![CDATA[
 		    select no, 
                    name, 
@@ -24,7 +24,7 @@
             from guestbook
 		]]>
 	</select>
-	
+
 	<select id="selectList" resultType="com.javaex.vo.GuestVo">
 	<![CDATA[
 			select  no,
