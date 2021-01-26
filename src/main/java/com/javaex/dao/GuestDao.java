@@ -41,11 +41,10 @@ public class GuestDao {
 	public List<GuestVo> ListAllGuest(){
 		System.out.println("dao: ListAllGuest");
 		sqlSession.selectList("guestbook.selectList");
-		//List<GuestVo> guestList = sqlSession.selectList("guestbook.selectList");
-		//System.out.println(guestList.toString());
-		//return guestList;
 		
-		return ListAllGuest();
+		List<GuestVo> guestList = sqlSession.selectList("guestbook.selectList");
+		//System.out.println(guestList.toString());
+		return guestList;
 	}
 	
 }
